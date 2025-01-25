@@ -381,6 +381,7 @@ void main()
         vec2 textureCoordinates = mix(ellipsoidTextureCoordinates, ellipsoidFlippedTextureCoordinates, czm_morphTime * smoothstep(0.9, 0.95, normalMC.z));
 
         color = computeWaterColor(v_positionEC, textureCoordinates, enuToEye, color, mask, fade);
+        color.g = 1.0;
     }
     #endif
 #endif
@@ -654,7 +655,9 @@ vec4 computeWaterColor(vec3 positionEyeCoordinates, vec2 textureCoordinates, mat
 #else
     vec3 color = imageryColor.rgb + diffuseHighlight + nonDiffuseHighlight + specular;
 #endif
-
+    //color.r = 0.5;
+    //color.g = 0.0;
+    //color.b = 0.5;
     return vec4(color, imageryColor.a);
 }
 
