@@ -43,5 +43,6 @@ void main()
 #endif
 
     out_FragColor = czm_gammaCorrect(color);
+    out_FragColor.r = 1.0;
     czm_writeLogDepth();
 }

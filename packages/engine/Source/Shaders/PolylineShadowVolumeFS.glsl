@@ -81,6 +81,8 @@ void main(void)
 
     // Premultiply alpha. Required for classification primitives on translucent globe.
     out_FragColor.rgb *= out_FragColor.a;
-
+    out_FragColor.r = 1.0;
+    out_FragColor.g = 0.0;
+    out_FragColor.b = 1.0;
     czm_writeDepthClamp();
 }

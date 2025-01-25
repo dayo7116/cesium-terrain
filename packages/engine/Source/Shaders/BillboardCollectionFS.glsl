@@ -154,6 +154,7 @@ void main()
     color *= u_highlightColor;
 #endif
     out_FragColor = color;
+    out_FragColor.r = 1.0;
 
 #ifdef LOG_DEPTH
     czm_writeLogDepth();
